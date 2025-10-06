@@ -191,6 +191,7 @@ form input[type="submit"] {
   border-radius: var(--radius);
   width: fit-content;
   transition: border var(--transition);
+  text-decoration: none;
 }
 
 a.button:hover,
