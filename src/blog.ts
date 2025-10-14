@@ -1,3 +1,4 @@
+// Make the type for a blog post
 type Blog = {
   title: string;
   date: string;
@@ -7,6 +8,7 @@ type Blog = {
   slug: string;
 };
 
+// Make a list of blogs
 const blogs: Blog[] = [
   {
     title: "My Recent Restaurant Adventures",
