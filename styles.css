@@ -334,3 +334,65 @@ a.button {
   text-align: center;
   padding: 0.6rem 1rem;
 }
+
+/* 
+   Blog Page
+ */
+ #blog-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Individual blog post card */
+.blog-post {
+  background: var(--clr-card-bg);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.blog-post:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(92, 122, 255, 0.2);
+}
+
+/* Blog image */
+.blog-post img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+/* Blog title */
+.blog-post h1 {
+  font-size: 1.6rem;
+  color: var(--clr-text);
+  margin: 0;
+  transition: color var(--transition);
+}
+
+.blog-post h1:hover {
+  color: var(--clr-accent);
+  cursor: pointer;
+}
+
+/* Blog date */
+.blog-date {
+  font-size: 0.9rem;
+  color: var(--clr-muted);
+  margin: 0;
+  font-style: italic;
+}
+
+/* Blog description */
+.blog-post p {
+  line-height: 1.6;
+  color: var(--clr-text);
+  margin: 0;
+}
