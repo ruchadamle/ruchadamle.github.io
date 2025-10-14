@@ -338,10 +338,11 @@ a.button {
 /* 
    Blog Page
  */
- #blog-container {
+#blog-container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  margin: 0 auto;
 }
 
 /* Individual blog post card */
@@ -364,9 +365,11 @@ a.button {
 /* Blog image */
 .blog-post img {
   width: 100%;
-  max-height: 400px;
-  object-fit: cover;
+  max-width: 350px;
+  height: auto;
   border-radius: var(--radius);
+  margin: 0 auto 1rem;
+  display: block;
 }
 
 /* Blog title */

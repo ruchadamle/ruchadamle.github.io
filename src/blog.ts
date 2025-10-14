@@ -13,7 +13,7 @@ const blogs: Blog[] = [
     date: "2025-10-12",
     description:
       "Since I have moved to San Luis Obispo, I've been exploring the local dining scene. Here are some the places I tried recently!",
-    image: "/images/goshi_slo.jpg",
+    image: "images/goshi_slo.jpg",
     imageAlt: "Table with various kinds of sushi",
     slug: "restaurant-ratings-reviews",
   },
@@ -22,7 +22,7 @@ const blogs: Blog[] = [
     date: "2025-10-13",
     description:
       "School can be stressful, which is why I have spent the last few months trying out different hobbies for stress relief. This is what I think of them!",
-    image: "/images/kittens.jpg",
+    image: "images/kittens.jpg",
     imageAlt: "Three kittens sleeping in a pile together",
     slug: "stress-busters-review",
   },
@@ -41,6 +41,15 @@ function displayBlogs(blogList: Blog[]) {
     const blogDiv = document.createElement("div");
     blogDiv.classList.add("blog-post");
 
+    // Make the link
+    const link = document.createElement("a");
+    // Use slug to make the URL
+    link.href = `blogs/${blog.slug}.html`;
+    link.style.textDecoration = "none";
+    link.style.color = "inherit";
+    // Allow user to click the whole blog post card
+    link.style.display = "block";
+
     // Create elements
     // Make title
     const title = document.createElement("h1");
@@ -48,7 +57,8 @@ function displayBlogs(blogList: Blog[]) {
 
     // Make date
     const date = document.createElement("p");
-    date.textContent = new Date(blog.date).toDateString();
+    const options = { year: "numeric", month: "long", day: "numeric" } as const;
+    date.textContent = new Date(blog.date).toLocaleDateString("en-US", options);
     date.classList.add("blog-date");
 
     // Make image
@@ -61,10 +71,14 @@ function displayBlogs(blogList: Blog[]) {
     description.textContent = blog.description;
 
     // Append children to put the pieces together
-    blogDiv.appendChild(title);
-    blogDiv.appendChild(date);
-    blogDiv.appendChild(image);
-    blogDiv.appendChild(description);
+    // Append everything to the link first
+    link.appendChild(title);
+    link.appendChild(date);
+    link.appendChild(image);
+    link.appendChild(description);
+
+    // Then append the link to the blog post div
+    blogDiv.appendChild(link);
 
     // Add the blog post to the page
     blogContainer.appendChild(blogDiv);
