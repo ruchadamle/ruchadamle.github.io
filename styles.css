@@ -107,14 +107,14 @@ main {
 }
 
 .about-image img {
-  max-width: 225px;
+  max-width: 300px;
   border-radius: var(--radius);
 }
 
 .about-text {
   flex: 1;
   min-width: 280px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.5;
 }
 
