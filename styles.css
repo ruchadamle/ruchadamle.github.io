@@ -86,6 +86,7 @@ main {
   padding: 0 1.5rem;
   display: flex;
   flex-direction: column;
+  flex: 1;
   gap: 3rem;
   box-sizing: border-box;
 }
@@ -106,13 +107,21 @@ main {
 }
 
 .about-image img {
-  max-width: 320px;
+  max-width: 225px;
   border-radius: var(--radius);
 }
 
 .about-text {
   flex: 1;
   min-width: 280px;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /*
@@ -249,18 +258,38 @@ form input[type="submit"]:hover {
   cursor: pointer;
 }
 
-/* 
-   Footer
- */
-.footer {
-  width: 100%;
-  padding: 1rem 0;
-  background: rgba(15, 19, 26, 0.95);
-  text-align: center;
-  color: var(--clr-muted);
-  border-top: 1px solid var(--clr-border);
+/* Footer Links */
+.footer a {
+  color: var(--clr-accent); /* matches your accent color */
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: color var(--transition);
 }
 
+.footer a:hover {
+  color: #ffffff; /* turns white on hover for contrast */
+}
+
+/* Footer Text */
+.footer p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  color: var(--clr-muted);
+}
+
+/* Optional: slightly larger text for main footer line */
+.footer .copyright {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Make sure the footer sticks nicely at the bottom if needed */
+.footer {
+  background: var(--clr-card-bg); /* dark card color for consistency */
+  border-top: 1px solid var(--clr-border);
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
 /* 
    Responsive Elements
 */
@@ -295,7 +324,7 @@ form input[type="submit"]:hover {
 .project img {
   object-fit: cover;
   width: 100%;
-  max-width: 550px;
+  max-width: 225px;
   height: auto;
   border-radius: var(--radius);
   transition: transform var(--transition), box-shadow var(--transition);
@@ -333,80 +362,4 @@ a.button {
   width: auto;
   text-align: center;
   padding: 0.6rem 1rem;
-}
-
-/* 
-   Blog Page
- */
-#blog-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin: 0 auto;
-}
-
-/* Individual blog post card */
-.blog-post {
-  max-width: 800px;
-  margin: 2rem auto;
-  background: var(--clr-card-bg);
-  padding: 2rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--clr-border);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  transition: none;
-}
-
-/* Blog image */
-.blog-post img {
-  width: 100%;
-  max-width: 350px;
-  height: auto;
-  border-radius: var(--radius);
-  margin: 0 auto 1rem;
-  display: block;
-}
-
-/* Blog title */
-.blog-post h1 {
-  font-size: 1.6rem;
-  color: var(--clr-text);
-  margin: 0;
-}
-
-/* Blog date */
-.blog-date {
-  font-size: 0.9rem;
-  color: var(--clr-muted);
-  margin: 0;
-  font-style: italic;
-}
-
-/* Blog description */
-.blog-post p {
-  line-height: 1.6;
-  color: var(--clr-text);
-  margin: 0;
-}
-
-.blog-content {
-  line-height: 1.7;
-  font-size: 1rem;
-  color: var(--clr-text);
-}
-
-.blog-content h3 {
-  font-size: 1.25rem;
-  margin-top: 1.5rem;
-  color: var(--clr-text);
-}
-
-.blog-content h3 span {
-  font-weight: 400;
-  color: var(--clr-muted);
-  font-size: 1rem;
-}
-
-.blog-content p {
-  margin-top: 0.5rem;
 }
